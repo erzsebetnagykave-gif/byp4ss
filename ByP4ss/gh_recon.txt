@@ -1,0 +1,26 @@
+=== gh CLI instalado? ===
+/data/data/com.termux/files/usr/bin/gh
+gh version 2.101.0
+=== logado? ===
+github.com
+  ✓ Logged in to github.com account erzsebetnagykave-gif (/data/data/com.termux/files/home/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'codespace', 'gist', 'read:org', 'repo', 'workflow'
+=== repos do teu user ===
+erzsebetnagykave-gif/crown-exploit		private	2026-11-07T16:37:34Z
+erzsebetnagykave-gif/cta-l-triple	Operação Blue Dolphin — Projeto Aurora: CTA-L + SYNAPSIS + PREFRONTAL + CFI	private	2026-07-26T21:27:16Z
+erzsebetnagykave-gif/modulos		public	2026-07-25T05:22:03Z
+erzsebetnagykave-gif/rezero		public	2026-07-25T04:43:28Z
+erzsebetnagykave-gif/theophilus-sanctum	📚 Projeto pessoal de estudos	private	2026-07-24T12:05:47Z
+erzsebetnagykave-gif/reimagined-fishstick		private	2026-07-15T01:20:09Z
+=== git config ===
+erzsebetnagykave-gif
+erzsebetnagykave-gif@users.noreply.github.com
+=== remotes do projeto atual ===
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+=== .git existe acima? ===

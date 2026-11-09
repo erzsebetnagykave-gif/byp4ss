@@ -1,0 +1,1367 @@
+======================================================================
+SEED DE INTEGRACAO — ByP4ss
+======================================================================
+
+## RESUMO
+Arquivos de codigo: 74
+Linhas totais: 28411
+
+## 1. ARQUIVOS CRIADOS (por extensao)
+----------------------------------------------------------------------
+
+C (2 arquivos, 447 linhas)
+  Tools/SENSOR/Core/debug_netlink.c                               74 linhas
+  Tools/SENSOR/sensor.c                                          373 linhas
+
+CPP (2 arquivos, 726 linhas)
+  Scanner/scanner.cpp                                            489 linhas
+  Tools/SENSOR/Core/NetlinkReader.cpp                            237 linhas
+
+GO (18 arquivos, 5276 linhas)
+  Console/main.go                                               1074 linhas
+  Discovery/portscan/discovery.go                                361 linhas
+  Discovery/portscan/main.go                                     559 linhas
+  Paleta/core/app.go                                             770 linhas
+  Paleta/core/main.go                                             16 linhas
+  Paleta/core/ui_canvas.go                                       152 linhas
+  Paleta/core/ui_federacao.go                                     64 linhas
+  Paleta/core/ui_input.go                                        342 linhas
+  Paleta/core/ui_killchain.go                                     79 linhas
+  Paleta/core/ui_layout.go                                       146 linhas
+  Paleta/core/ui_lista.go                                        273 linhas
+  Paleta/core/ui_operador.go                                      77 linhas
+  Paleta/core/ui_sessao.go                                       146 linhas
+  Paleta/core/ui_terminal.go                                     161 linhas
+  Paleta/core/ui_texto.go                                        279 linhas
+  Paleta/core/ui_widgets.go                                      277 linhas
+  Paleta/run.go                                                  146 linhas
+  Paleta/state/main.go                                           354 linhas
+
+PY (49 arquivos, 20921 linhas)
+  Analise.py                                                     314 linhas
+  Api.py                                                         329 linhas
+  ByP4ss.py                                                      101 linhas
+  Bypass/HttpAuth.py                                             209 linhas
+  Bypass/UpnpBypass.py                                           557 linhas
+  Cadeia.py                                                      335 linhas
+  Console.py                                                    1835 linhas
+  Console/assinc.py                                              190 linhas
+  Console/clientes.py                                            211 linhas
+  Console/estado.py                                              244 linhas
+  Console/main.py                                                 54 linhas
+  Console/manifesto_server.py                                     59 linhas
+  Console/render.py                                              276 linhas
+  Core/Config.py                                                 239 linhas
+  Core/Constants.py                                              583 linhas
+  Core/Engine.py                                                 508 linhas
+  Core/Log.py                                                    246 linhas
+  Discovery/Descriptor.py                                        181 linhas
+  Discovery/PortScan.py                                          249 linhas
+  Discovery/Ssdp.py                                              236 linhas
+  ExploitByp4ss/Arcadyan/CVE_2021_20090.py                       499 linhas
+  ExploitByp4ss/Aux1l14r3s/Payloads/Base64.py                    392 linhas
+  ExploitByp4ss/Aux1l14r3s/Payloads/Mips.py                      495 linhas
+  ExploitByp4ss/Aux1l14r3s/Scanners/CgiRules.py                  290 linhas
+  ExploitByp4ss/Aux1l14r3s/Scanners/CgiScanner.py                428 linhas
+  ExploitByp4ss/Aux1l14r3s/Scanners/PathScanner.py               484 linhas
+  ExploitByp4ss/Aux1l14r3s/Servers/HttpFalso.py                  491 linhas
+  ExploitByp4ss/Aux1l14r3s/Servers/SsdpFalso.py                  702 linhas
+  ExploitByp4ss/Aux1l14r3s/Shells/BindShell.py                   581 linhas
+  ExploitByp4ss/Aux1l14r3s/Shells/ReverseShell.py                590 linhas
+  ExploitByp4ss/CredLoader.py                                    461 linhas
+  ExploitByp4ss/DLink/CVE_2024_3273.py                           632 linhas
+  ExploitByp4ss/IpTime/CVE_2025_55423.py                         486 linhas
+  ExploitByp4ss/TPLink/CVE_2023_1389.py                          535 linhas
+  ExploitByp4ss/Tenda/CVE_2025_29384.py                          250 linhas
+  ExploitByp4ss/Tenda/CVE_2025_7795.py                           455 linhas
+  Manifesto.py                                                   810 linhas
+  Paleta/AutoComplete.py                                        1149 linhas
+  Paleta/Fuzzy.py                                                455 linhas
+  Paleta/Registro.py                                             398 linhas
+  Paleta/core/auditor.py                                         417 linhas
+  RegistroComandos.py                                            296 linhas
+  Sessao.py                                                      242 linhas
+  Tools/K1ELI/Base/Credenciais.py                                649 linhas
+  Tools/K1ELI/FormParser.py                                      519 linhas
+  Tools/K1ELI/K1ELI.py                                           519 linhas
+  Tools/SENSOR/Core/Netlink.py                                   127 linhas
+  Tools/SENSOR/SENSOR_PROBE.py                                   276 linhas
+  Tools/SENSOR/Sensor.py                                         337 linhas
+
+RS (1 arquivos, 646 linhas)
+  Paleta/fuzzy/src/main.rs                                       646 linhas
+
+SH (2 arquivos, 395 linhas)
+  Paleta/core/auditor.sh                                         249 linhas
+  Paleta/diagnostico.sh                                          146 linhas
+
+## 2. QUEM CHAMA QUEM
+----------------------------------------------------------------------
+(lado esquerdo: arquivo que chama | lado direito: o que ele chama)
+
+Analise.py
+  -> Analise
+  -> Core
+  -> Engine
+  -> argparse
+  -> datetime
+  -> importlib
+  -> json
+  -> os
+  -> socket
+  -> sys
+  -> time
+
+Api.py
+  -> Analise
+  -> Api
+  -> Cadeia
+  -> Core
+  -> Engine
+  -> RegistroComandos
+  -> Sessao
+  -> argparse
+  -> datetime
+  -> http
+  -> json
+  -> os
+  -> socket
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ByP4ss.py
+  -> Core
+  -> Engine
+  -> argparse
+  -> os
+  -> sys
+
+Bypass/HttpAuth.py
+  -> Core
+  -> re
+  -> ssl
+  -> urllib
+
+Bypass/UpnpBypass.py
+  -> Analise
+  -> Core
+  -> Discovery
+  -> Motor
+  -> json
+  -> re
+  -> socket
+  -> time
+  -> urllib
+
+Cadeia.py
+  -> Cadeia
+  -> RegistroComandos
+  -> Sessao
+  -> argparse
+  -> datetime
+  -> json
+  -> os
+  -> sys
+  -> time
+
+Console.py
+  -> Analise
+  -> Api
+  -> Cadeia
+  -> Core
+  -> Engine
+  -> Federacao
+  -> RegistroComandos
+  -> Sessao
+  -> argparse
+  -> datetime
+  -> hashlib
+  -> json
+  -> os
+  -> re
+  -> select
+  -> shutil
+  -> signal
+  -> sys
+  -> termios
+  -> time
+  -> tty
+  -> urllib
+
+Console/assinc.py
+  -> Motor
+  -> sys
+  -> threading
+  -> time
+  -> uuid
+
+Console/clientes.py
+  -> json
+  -> os
+  -> select
+  -> subprocess
+  -> sys
+
+Console/estado.py
+  -> json
+  -> os
+  -> sys
+  -> time
+
+Console/main.go
+  -> /Paleta/run
+  -> /Paleta/state/state
+  -> 20060102_150405
+  -> 30
+  -> BYPASS
+  -> CADEIA
+  -> CONFIG
+  -> CREDENCIAIS
+  -> Cadeia
+  -> EXPLOITS
+  -> Engine
+  -> FALHA
+  -> HOME
+  -> LOGS
+  -> MANIFESTO
+  -> OK
+  -> QUIT
+  -> RECON
+  -> SESSIONS
+  -> ajuda
+  -> alvo
+  -> alvo_atual
+  -> analise
+  -> args
+  -> bypass
+  -> cadeia
+  -> cmd
+  -> config
+  -> console_
+  -> cred
+  -> credenciais
+  -> descricao
+  -> encoding/json
+  -> estado
+  -> executar
+  -> exploits
+  -> false
+  -> fantasma
+  -> fmt
+  -> historico
+  -> idade_s
+  -> local
+  -> logs
+  -> manifesto
+  -> manifests
+  -> modo
+  -> motivo
+  -> nome
+  -> ok
+  -> op
+  -> operador
+  -> os
+  -> os/exec
+  -> pass
+  -> path/filepath
+  -> python3
+  -> raw
+  -> recon
+  -> resposta_invalida
+  -> resultado
+  -> run_ausente
+  -> run_exec_falhou
+  -> s
+  -> sala_atual
+  -> sane
+  -> sessao_auto
+  -> sessao_listar
+  -> sessao_salvar
+  -> sessions
+  -> sessoes
+  -> size
+  -> strings
+  -> stty
+  -> tamanho
+  -> templates
+  -> time
+  -> timeout_run
+  -> total
+  -> true
+  -> user
+  -> versao
+
+Console/main.py
+  -> Motor
+  -> assinc
+  -> os
+  -> sys
+  -> time
+
+Console/manifesto_server.py
+  -> Manifesto
+  -> Motor
+  -> json
+  -> os
+  -> sys
+
+Console/render.py
+  -> os
+  -> re
+  -> shutil
+  -> subprocess
+  -> sys
+  -> time
+
+Core/Config.py
+  -> Core
+  -> json
+  -> os
+
+Core/Constants.py
+  -> os
+
+Core/Engine.py
+  -> Core
+  -> CredLoader
+  -> Engine
+  -> importlib
+  -> os
+  -> time
+
+Core/Log.py
+  -> Core
+  -> datetime
+  -> json
+  -> os
+  -> sys
+  -> time
+
+Discovery/Descriptor.py
+  -> Core
+  -> urllib
+  -> xml
+
+Discovery/PortScan.py
+  -> Core
+  -> Engine
+  -> os
+  -> queue
+  -> random
+  -> socket
+  -> sqlite3
+  -> struct
+  -> threading
+  -> time
+
+Discovery/Ssdp.py
+  -> Core
+  -> re
+  -> socket
+  -> time
+  -> urllib
+
+Discovery/portscan/discovery.go
+  -> EHLO
+  -> FATAL
+  -> FTP
+  -> HTTP/2
+  -> MariaDB
+  -> MongoDB
+  -> PostgreSQL
+  -> SMTP
+  -> classica
+  -> cloud
+  -> confianca
+  -> db_rpc
+  -> desconhecido
+  -> efemera
+  -> evidencia
+  -> fmt
+  -> ftp
+  -> high
+  -> http
+  -> https
+  -> imap
+  -> latencia
+  -> mongodb
+  -> mysql
+  -> mysql_native_password
+  -> net
+  -> pop3
+  -> porta
+  -> postgres
+  -> redis
+  -> registro
+  -> sequencia
+  -> servico
+  -> sistema
+  -> smtp
+  -> sort
+  -> ssh
+  -> sucesso
+  -> sync
+  -> tcp
+  -> telnet
+  -> time
+  -> upnp
+  -> web_alt
+  -> web_email
+
+Discovery/portscan/main.go
+  -> Alcatel
+  -> Aruba
+  -> Asus
+  -> Cisco
+  -> Fiberhome
+  -> Fortinet
+  -> Huawei
+  -> Juniper
+  -> Linksys
+  -> Linux
+  -> MikroTik
+  -> Netgear
+  -> Nokia
+  -> OpenWrt
+  -> Ruckus
+  -> Sagemcom
+  -> Technicolor
+  -> Ubiquiti
+  -> ZTE
+  -> Zyxel
+  -> aberta
+  -> abertas
+  -> afp
+  -> alcatel
+  -> alvo
+  -> aruba
+  -> asus
+  -> banner
+  -> bd
+  -> bgp
+  -> cisco
+  -> consul
+  -> couchdb
+  -> criticas
+  -> crypto/tls
+  -> desconhecido
+  -> dlink
+  -> dns
+  -> docker
+  -> duracao
+  -> elasticsearch
+  -> encoding/json
+  -> erro
+  -> erros
+  -> estado
+  -> fechada
+  -> fechadas
+  -> fiberhome
+  -> filtrada
+  -> filtradas
+  -> fim
+  -> flag
+  -> fmt
+  -> fortigate
+  -> fortinet
+  -> ftp
+  -> ftps
+  -> full
+  -> grafana
+  -> http
+  -> https
+  -> huawei
+  -> imap
+  -> imaps
+  -> influxdb
+  -> inicio
+  -> ipmi
+  -> isakmp
+  -> juniper
+  -> latencia
+  -> ldap
+  -> ldaps
+  -> linksys
+  -> memcached
+  -> mikrotik
+  -> modelo
+  -> modo
+  -> mongodb
+  -> msrpc
+  -> mssql
+  -> mysql
+  -> net
+  -> netgear
+  -> nfs
+  -> nokia
+  -> ntp
+  -> openvpn
+  -> openwrt
+  -> oracle
+  -> os
+  -> pfSense
+  -> pfsense
+  -> polipo
+  -> pop3
+  -> pop3s
+  -> porta
+  -> portas
+  -> postgres
+  -> pptp
+  -> printer
+  -> prometheus
+  -> protocolo
+  -> rabbitmq
+  -> rdp
+  -> recusada
+  -> recusadas
+  -> redis
+  -> refused
+  -> resultados
+  -> roteador
+  -> routeros
+  -> rpcbind
+  -> rsync
+  -> rtsp
+  -> ruckus
+  -> sagemcom
+  -> saida
+  -> servico
+  -> sip
+  -> smtp
+  -> snmp
+  -> so
+  -> socks
+  -> sort
+  -> splunk
+  -> ssh
+  -> strings
+  -> submission
+  -> sync
+  -> syslog
+  -> tcp
+  -> technicolor
+  -> telnet
+  -> tftp
+  -> threads
+  -> time
+  -> timeout
+  -> total
+  -> tplink
+  -> ubiquiti
+  -> udp
+  -> unreachable
+  -> upnp
+  -> vendor
+  -> vnc
+  -> web
+  -> weblogic
+  -> webmin
+  -> xmpp
+  -> zte
+  -> zyxel
+
+ExploitByp4ss/Arcadyan/CVE_2021_20090.py
+  -> Aux1l14r3s
+  -> ByP4ss
+  -> Bypass
+  -> CredLoader
+  -> ExploitByp4ss
+  -> argparse
+  -> concurrent
+  -> datetime
+  -> json
+  -> os
+  -> socket
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Aux1l14r3s/Payloads/Base64.py
+  -> argparse
+  -> base64
+  -> binascii
+  -> json
+  -> os
+  -> random
+  -> re
+  -> string
+  -> sys
+  -> urllib
+
+ExploitByp4ss/Aux1l14r3s/Payloads/Mips.py
+  -> argparse
+  -> base64
+  -> hashlib
+  -> json
+  -> os
+  -> random
+  -> struct
+  -> sys
+
+ExploitByp4ss/Aux1l14r3s/Scanners/CgiRules.py
+  -> 
+  -> CgiScanner
+  -> argparse
+  -> json
+  -> os
+  -> re
+  -> sys
+
+ExploitByp4ss/Aux1l14r3s/Scanners/CgiScanner.py
+  -> CgiRules
+  -> argparse
+  -> json
+  -> os
+  -> queue
+  -> random
+  -> re
+  -> socket
+  -> ssl
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Aux1l14r3s/Scanners/PathScanner.py
+  -> argparse
+  -> json
+  -> os
+  -> queue
+  -> re
+  -> socket
+  -> ssl
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Aux1l14r3s/Servers/HttpFalso.py
+  -> argparse
+  -> base64
+  -> hashlib
+  -> http
+  -> json
+  -> os
+  -> random
+  -> socket
+  -> socketserver
+  -> ssl
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Aux1l14r3s/Servers/SsdpFalso.py
+  -> Tools
+  -> argparse
+  -> hashlib
+  -> http
+  -> json
+  -> os
+  -> random
+  -> socket
+  -> struct
+  -> sys
+  -> threading
+  -> time
+  -> uuid
+
+ExploitByp4ss/Aux1l14r3s/Shells/BindShell.py
+  -> argparse
+  -> base64
+  -> ctypes
+  -> hashlib
+  -> json
+  -> os
+  -> random
+  -> socket
+  -> struct
+  -> subprocess
+  -> sys
+  -> threading
+  -> time
+
+ExploitByp4ss/Aux1l14r3s/Shells/ReverseShell.py
+  -> base64
+  -> hashlib
+  -> json
+  -> os
+  -> queue
+  -> random
+  -> socket
+  -> ssl
+  -> struct
+  -> subprocess
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/CredLoader.py
+  -> CredLoader
+  -> argparse
+  -> json
+  -> os
+  -> re
+  -> sys
+
+ExploitByp4ss/DLink/CVE_2024_3273.py
+  -> Aux1l14r3s
+  -> CredLoader
+  -> ExploitByp4ss
+  -> argparse
+  -> base64
+  -> concurrent
+  -> datetime
+  -> json
+  -> os
+  -> socket
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/IpTime/CVE_2025_55423.py
+  -> Aux1l14r3s
+  -> CredLoader
+  -> ExploitByp4ss
+  -> argparse
+  -> concurrent
+  -> datetime
+  -> json
+  -> os
+  -> socket
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/TPLink/CVE_2023_1389.py
+  -> argparse
+  -> base64
+  -> json
+  -> os
+  -> random
+  -> socket
+  -> ssl
+  -> string
+  -> subprocess
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Tenda/CVE_2025_29384.py
+  -> Aux1l14r3s
+  -> CredLoader
+  -> ExploitByp4ss
+  -> argparse
+  -> concurrent
+  -> datetime
+  -> json
+  -> os
+  -> socket
+  -> struct
+  -> subprocess
+  -> sys
+  -> threading
+  -> time
+  -> urllib
+
+ExploitByp4ss/Tenda/CVE_2025_7795.py
+  -> CredLoader
+  -> argparse
+  -> concurrent
+  -> datetime
+  -> json
+  -> os
+  -> socket
+  -> subprocess
+  -> sys
+  -> time
+  -> urllib
+
+Manifesto.py
+  -> Manifesto
+  -> Motor
+  -> argparse
+  -> ast
+  -> datetime
+  -> hashlib
+  -> importlib
+  -> json
+  -> os
+  -> re
+  -> shutil
+  -> sys
+
+Paleta/AutoComplete.py
+  -> Fuzzy
+  -> RegistroComandos
+  -> importlib
+  -> inspect
+  -> os
+  -> re
+  -> sys
+
+Paleta/Fuzzy.py
+  -> re
+
+Paleta/Registro.py
+  -> RegistroComandos
+  -> argparse
+  -> datetime
+  -> importlib
+  -> json
+  -> os
+  -> re
+  -> shutil
+  -> sys
+
+Paleta/core/app.go
+  -> /
+  -> BYPASS
+  -> FALHA
+  -> OK
+  -> _
+  -> alvo
+  -> alvo_atual
+  -> alvo_invalido
+  -> args
+  -> bufio
+  -> bye
+  -> cache_limpar
+  -> cadeia
+  -> cancelado
+  -> carregar_sessao
+  -> chave
+  -> cmd
+  -> definir
+  -> descricao
+  -> encoding/json
+  -> executar
+  -> federacao
+  -> federar
+  -> fmt
+  -> help
+  -> io
+  -> item
+  -> itens
+  -> json_invalido
+  -> leitura_falhou
+  -> limpar_cache
+  -> modo_fantasma
+  -> motivo
+  -> nome
+  -> nome_invalido
+  -> ok
+  -> op
+  -> os
+  -> os/exec
+  -> paleta_carregar
+  -> paleta_listar
+  -> paletas
+  -> pipe_falhou
+  -> recarregar_paletas
+  -> resultados
+  -> run_off
+  -> s
+  -> sair
+  -> salvar_sessao
+  -> score
+  -> serialize_falhou
+  -> strings
+  -> time
+  -> total
+  -> x
+
+Paleta/core/auditor.py
+  -> datetime
+  -> os
+  -> pty
+  -> re
+  -> select
+  -> subprocess
+  -> sys
+  -> threading
+  -> time
+
+Paleta/core/main.go
+  -> fmt
+  -> os
+
+Paleta/core/ui_canvas.go
+  -> strings
+
+Paleta/core/ui_federacao.go
+  -> ms
+  -> strings
+  -> v
+
+Paleta/core/ui_input.go
+  -> BACKSPACE
+  -> DELETE
+  -> DOWN
+  -> END
+  -> ENTER
+  -> ESC
+  -> F1
+  -> F5
+  -> F8
+  -> HOME
+  -> LEFT
+  -> PGDN
+  -> PGUP
+  -> RIGHT
+  -> TAB
+  -> UP
+  -> os
+  -> time
+
+Paleta/core/ui_killchain.go
+  -> Cadeia
+  -> descricao
+  -> encoding/json
+  -> nome
+  -> os/exec
+  -> python3
+  -> strings
+  -> templates
+
+Paleta/core/ui_layout.go
+  -> 0
+  -> strings
+  -> x
+
+Paleta/core/ui_lista.go
+  -> strings
+
+Paleta/core/ui_operador.go
+  -> crypto/sha256
+  -> fmt
+  -> localhost
+  -> net
+  -> strings
+  -> time
+  -> udp
+
+Paleta/core/ui_sessao.go
+  -> 20060102_150405
+  -> alvo_atual
+  -> auto_
+  -> encoding/json
+  -> fmt
+  -> historico
+  -> idade_s
+  -> nome
+  -> nome_invalido
+  -> nome_vazio
+  -> os
+  -> paleta_idx
+  -> paleta_nome
+  -> path/filepath
+  -> query
+  -> sessoes
+  -> sort
+  -> strings
+  -> tamanho
+  -> time
+  -> timestamp
+
+Paleta/core/ui_terminal.go
+  -> fmt
+  -> os
+  -> os/exec
+  -> os/signal
+  -> raw
+  -> sane
+  -> size
+  -> strings
+  -> stty
+  -> sync
+  -> syscall
+
+Paleta/core/ui_texto.go
+  -> c
+  -> center
+  -> centro
+  -> dir
+  -> r
+  -> right
+  -> strings
+
+Paleta/core/ui_widgets.go
+  -> aviso
+  -> destaque
+  -> dir
+  -> erro
+  -> info
+  -> ok
+  -> strings
+  -> time
+
+Paleta/run.go
+  -> RegistroComandos
+  -> args
+  -> bufio
+  -> cmd
+  -> cmd_ausente
+  -> encoding/json
+  -> erro
+  -> executar
+  -> fmt
+  -> io
+  -> json_invalido
+  -> leitura_falhou
+  -> motivo
+  -> ok
+  -> op
+  -> os
+  -> os/exec
+  -> ping
+  -> pipe_falhou
+  -> pong
+  -> python3
+  -> python_nao_subiu
+  -> python_off
+  -> serialize_falhou
+  -> strings
+  -> vazio
+
+Paleta/state/main.go
+  -> Sessao
+  -> acoes
+  -> alvo_atual
+  -> bufio
+  -> cache
+  -> carregar_sessao
+  -> chave
+  -> cor
+  -> definir
+  -> descricao
+  -> descricao_item
+  -> encoding/json
+  -> estado
+  -> estado_invalido
+  -> estado_restaurar
+  -> estado_snapshot
+  -> federar
+  -> fmt
+  -> fonte
+  -> grupo
+  -> help
+  -> historico
+  -> idade_s
+  -> itens
+  -> json_invalido
+  -> limpar_cache
+  -> modo_fantasma
+  -> motivo
+  -> nao_encontrada
+  -> nome
+  -> nome_invalido
+  -> ok
+  -> op
+  -> os
+  -> os/exec
+  -> paleta
+  -> paleta_atual
+  -> paleta_carregar
+  -> paleta_listar
+  -> paleta_nao_encontrada
+  -> paletas
+  -> path/filepath
+  -> ping
+  -> pong
+  -> py_falhou
+  -> python3
+  -> query
+  -> recarregar_paletas
+  -> sair
+  -> salvar_sessao
+  -> sessao_carregar
+  -> sessao_listar
+  -> sessao_salvar
+  -> sessoes
+  -> sort
+  -> strings
+  -> tamanho
+  -> time
+  -> timestamp
+  -> total
+  -> vazio
+
+RegistroComandos.py
+  -> Analise
+  -> Engine
+  -> RegistroComandos
+  -> argparse
+  -> datetime
+  -> importlib
+  -> inspect
+  -> json
+  -> os
+  -> sys
+  -> time
+
+Sessao.py
+  -> Sessao
+  -> argparse
+  -> datetime
+  -> glob
+  -> json
+  -> os
+  -> shutil
+  -> sys
+  -> time
+
+Tools/K1ELI/FormParser.py
+  -> Core
+  -> html
+  -> json
+  -> re
+  -> ssl
+  -> urllib
+
+Tools/K1ELI/K1ELI.py
+  -> Core
+  -> Tools
+  -> base64
+  -> importlib
+  -> paramiko
+  -> random
+  -> re
+  -> socket
+  -> ssl
+  -> time
+  -> urllib
+
+Tools/SENSOR/Core/Netlink.py
+  -> ctypes
+  -> json
+  -> os
+
+Tools/SENSOR/SENSOR_PROBE.py
+  -> json
+  -> os
+  -> shutil
+  -> subprocess
+  -> sys
+
+Tools/SENSOR/Sensor.py
+  -> ctypes
+  -> os
+  -> sys
+
+
+## 3. ORFAOS (arquivos que ninguem chama)
+----------------------------------------------------------------------
+  Core/Constants.py                                              583 linhas
+  Core/Config.py                                                 239 linhas
+  Core/Log.py                                                    246 linhas
+  Discovery/Ssdp.py                                              236 linhas
+  Discovery/Descriptor.py                                        181 linhas
+  Discovery/PortScan.py                                          249 linhas
+  Discovery/portscan/discovery.go                                361 linhas
+  Bypass/UpnpBypass.py                                           557 linhas
+  Bypass/HttpAuth.py                                             209 linhas
+  Tools/K1ELI/K1ELI.py                                           519 linhas
+  Tools/K1ELI/FormParser.py                                      519 linhas
+  Tools/K1ELI/Base/Credenciais.py                                649 linhas
+  Tools/SENSOR/sensor.c                                          373 linhas
+  Tools/SENSOR/Sensor.py                                         337 linhas
+  Tools/SENSOR/SENSOR_PROBE.py                                   276 linhas
+  Tools/SENSOR/Core/NetlinkReader.cpp                            237 linhas
+  Tools/SENSOR/Core/Netlink.py                                   127 linhas
+  Tools/SENSOR/Core/debug_netlink.c                               74 linhas
+  ExploitByp4ss/Aux1l14r3s/Payloads/Base64.py                    392 linhas
+  ExploitByp4ss/Aux1l14r3s/Payloads/Mips.py                      495 linhas
+  ExploitByp4ss/Aux1l14r3s/Servers/SsdpFalso.py                  702 linhas
+  ExploitByp4ss/Aux1l14r3s/Servers/HttpFalso.py                  491 linhas
+  ExploitByp4ss/Aux1l14r3s/Shells/ReverseShell.py                590 linhas
+  ExploitByp4ss/Aux1l14r3s/Shells/BindShell.py                   581 linhas
+  ExploitByp4ss/Aux1l14r3s/Scanners/PathScanner.py               484 linhas
+  Paleta/AutoComplete.py                                        1149 linhas
+  Paleta/Registro.py                                             398 linhas
+  Paleta/run.go                                                  146 linhas
+  Paleta/diagnostico.sh                                          146 linhas
+  Paleta/core/ui_sessao.go                                       146 linhas
+  Paleta/core/auditor.sh                                         249 linhas
+  Paleta/core/ui_killchain.go                                     79 linhas
+  Paleta/core/ui_federacao.go                                     64 linhas
+  Paleta/core/ui_operador.go                                      77 linhas
+  Paleta/core/ui_texto.go                                        279 linhas
+  Paleta/core/ui_terminal.go                                     161 linhas
+  Paleta/core/ui_canvas.go                                       152 linhas
+  Paleta/core/ui_input.go                                        342 linhas
+  Paleta/core/ui_layout.go                                       146 linhas
+  Paleta/core/ui_lista.go                                        273 linhas
+  Paleta/core/ui_widgets.go                                      277 linhas
+  Paleta/core/app.go                                             770 linhas
+  Paleta/core/auditor.py                                         417 linhas
+  Console/main.py                                                 54 linhas
+  Console/render.py                                              276 linhas
+  Console/clientes.py                                            211 linhas
+  Console/manifesto_server.py                                     59 linhas
+
+Total: 47 orfaos
+
+## 4. INTEGRADOS (chamados por alguem)
+----------------------------------------------------------------------
+  ByP4ss.py                                                    <- ExploitByp4ss/Arcadyan/CVE_2021_20090.py
+  Sessao.py                                                    <- Api.py, Cadeia.py, Console.py, Paleta/state/main.go, Sessao.py
+  Analise.py                                                   <- Analise.py, Api.py, Bypass/UpnpBypass.py, Console.py, RegistroComandos.py
+  RegistroComandos.py                                          <- Api.py, Cadeia.py, Console.py, Paleta/AutoComplete.py, Paleta/Registro.py, Paleta/run.go, RegistroComandos.py
+  Cadeia.py                                                    <- Api.py, Cadeia.py, Console.py, Console/main.go, Paleta/core/ui_killchain.go
+  Api.py                                                       <- Api.py, Console.py
+  Manifesto.py                                                 <- Console/manifesto_server.py, Manifesto.py
+  Core/Engine.py                                               <- Analise.py, Api.py, ByP4ss.py, Console.py, Console/main.go, Core/Engine.py, Discovery/PortScan.py, RegistroComandos.py
+  ExploitByp4ss/CredLoader.py                                  <- Core/Engine.py, ExploitByp4ss/Arcadyan/CVE_2021_20090.py, ExploitByp4ss/CredLoader.py, ExploitByp4ss/DLink/CVE_2024_3273.py, ExploitByp4ss/IpTime/CVE_2025_55423.py, ExploitByp4ss/Tenda/CVE_2025_29384.py, ExploitByp4ss/Tenda/CVE_2025_7795.py
+  ExploitByp4ss/Aux1l14r3s/Scanners/CgiScanner.py              <- ExploitByp4ss/Aux1l14r3s/Scanners/CgiRules.py
+  ExploitByp4ss/Aux1l14r3s/Scanners/CgiRules.py                <- ExploitByp4ss/Aux1l14r3s/Scanners/CgiScanner.py
+  Paleta/Fuzzy.py                                              <- Paleta/AutoComplete.py
+  Console/assinc.py                                            <- Console/main.py
+  Console/estado.py                                            <- Console/main.go, Discovery/portscan/main.go, Paleta/state/main.go
+
+Total: 14 integrados
+
+## 5. FLUXO REAL DE ATAQUE
+----------------------------------------------------------------------
+
+O que DEVERIA acontecer (fluxo completo):
+
+  Console.py / console(Go) / main.py
+      |
+      v
+  RegistroComandos.Executar("exploit dlink", {"alvo": "192.168.0.1"})
+      |
+      v
+  Engine.Exploit("dlink", "192.168.0.1")
+      |
+      v
+  CVE_2024_3273.ModoAuto("192.168.0.1")
+      |
+      +-- CredLoader.Buscar()           [opcional]
+      +-- ExploitAuthBypass()            [usa Base64]
+      +-- ExploitCommandInjection()      [usa Base64]
+      +-- ExploitSemRoot()               [usa ReverseShell + AbrirListener]
+      +-- ExploitRoot()                  [usa bind]
+
+O que ESTA acontecendo (verificado nos arquivos):
+
+  main.py                        -> importa assinc (Motor)
+  clientes.py                    -> chama state, run, manifesto (via pipe)
+  salas.py                       -> chama clientes
+  app.py                         -> NAO EXISTE AINDA
+  prompt.py                      -> NAO EXISTE AINDA
+
+  run.go                         -> chama RegistroComandos.Executar
+  RegistroComandos.py            -> chama Engine.Exploit / Engine.Scan / Engine.Credenciais
+  Engine.py                      -> chama ExploitByp4ss.DLink.CVE_2024_3273
+
+  CVE_2024_3273.py               -> chama Base64, ReverseShell, CredLoader (importados)
+  Aux1l14r3s/Base64.py           -> independente
+  Aux1l14r3s/ReverseShell.py     -> independente
+  Aux1l14r3s/Mips.py             -> independente
+  Aux1l14r3s/BindShell.py        -> independente
+  Aux1l14r3s/Scanners/*          -> independentes
+  Aux1l14r3s/Servers/*           -> independentes
+
+  O QUE ESTA FALTANDO:
+
+  1. app.py nao existe -> Console nao tem loop principal ainda
+  2. prompt.py nao existe -> Console nao tem prompt MSF-style ainda
+  3. main.py nao chama app -> CLI stub
+  4. Scanner C++ esta isolado -> nao alimenta a sala recon do Console
+  5. salas.py roda mas app.py nao existe -> nao testa nada
+  6. Manifesto nao integrado ao console
+  7. Q-Learning nao existe
+  8. Sistema de plugins nao existe
+
+  FLUXO QUE FUNCIONA HOJE (verificado):
+
+  clientes.py -> run -> python3 -c -> RegistroComandos -> Engine -> exploit
+  clientes.py -> state -> paleta/sessao/alvo
+  clientes.py -> manifesto_server.py -> Manifesto.Motor
+
+  Ou seja: o MOTOR de integracao (clientes.py) funciona.
+  Falta a UI que chama o motor (app.py + prompt.py + main.py).
+
+  FLUXO QUE NAO FUNCIONA:
+
+  Console completo (assinc + render + estado + clientes + salas + app) 
+  porque app.py nao existe.
+
+## 6. DEPENDENCIAS ENTRE MODULOS (arvore)
+----------------------------------------------------------------------
+Console/app.py (FALTA)  (sem dependencia)
+
+Console/prompt.py (FALTA)  (sem dependencia)
+
+Console/salas.py
+  depende de: clientes.py
+
+Console/clientes.py
+  depende de: run
+  depende de: state
+  depende de: manifesto_server.py
+
+Console/estado.py  (sem dependencia)
+
+Console/render.py  (sem dependencia)
+
+Console/assinc.py  (sem dependencia)
+
+run.go
+  depende de: RegistroComandos
+
+RegistroComandos.py
+  depende de: Engine.Exploit
+  depende de: Engine.Scan
+  depende de: Engine.Credenciais
+
+Engine.py
+  depende de: ExploitByp4ss.DLink
+  depende de: ExploitByp4ss.TPLink
+  depende de: ExploitByp4ss.Tenda
+
+CVE_2024_3273.py
+  depende de: Base64
+  depende de: ReverseShell
+  depende de: CredLoader
+
+CVE_2023_1389.py
+  depende de: Base64
+
+CVE_2025_7795.py  (sem dependencia)
+
+CVE_2021_20090.py
+  depende de: PathScanner
+  depende de: ReverseShell
+  depende de: CredLoader
+
+CVE_2025_55423.py
+  depende de: SsdpFalso
+
+CVE_2025_29384.py
+  depende de: Mips
+
+
+## 7. RESUMO DE INTEGRACAO
+----------------------------------------------------------------------
+Arquivos criados:      74
+Arquivos integrados:   14
+Arquivos orfaos:       47
+
+Motor de integracao (clientes.py): FUNCIONA
+UI/Console (app.py, prompt.py): FALTAM
+main.py: STUB (nao chama app)
+Scanner C++: ISOLADO (nao integrado ao Console)
+
+======================================================================
+FIM DO SEED
+======================================================================
